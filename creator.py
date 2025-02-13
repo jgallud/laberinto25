@@ -2,7 +2,12 @@ from juego import Habitacion, Laberinto, Pared, Puerta
 
 class Creator:
     def crear_habitacion(self, num):
-        return Habitacion(num)
+        hab=Habitacion(num)
+        hab.norte = Pared()
+        hab.sur = Pared()
+        hab.este = Pared()
+        hab.oeste = Pared()
+        return hab
 
     def crear_laberinto(self):
         return Laberinto()

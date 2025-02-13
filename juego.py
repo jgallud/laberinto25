@@ -1,5 +1,3 @@
-from creator import Creator
-
 class ElementoMapa:
     def __init__(self):
         pass
@@ -8,10 +6,6 @@ class Habitacion(ElementoMapa):
     def __init__(self, num):
         super().__init__()
         self.num = num
-        self.norte = Pared()
-        self.sur = Pared()
-        self.este = Pared()
-        self.oeste = Pared()
 
 class Laberinto(ElementoMapa):
     def __init__(self):
@@ -55,10 +49,3 @@ class Juego:
         laberinto.agregar_habitacion(habitacion1)
         laberinto.agregar_habitacion(habitacion2)
         return laberinto
-
-#ejemplo de uso
-creator = Creator()
-juego = Juego()
-juego.laberinto = juego.crearLaberinto2HabFM(creator)
-print(juego.laberinto.habitaciones[0].num)
-print(juego.laberinto.habitaciones[1].num)
