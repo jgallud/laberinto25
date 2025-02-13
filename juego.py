@@ -1,3 +1,5 @@
+from creator import Creator
+
 class ElementoMapa:
     def __init__(self):
         pass
@@ -6,10 +8,10 @@ class Habitacion(ElementoMapa):
     def __init__(self, num):
         super().__init__()
         self.num = num
-        self.norte = None
-        self.sur = None
-        self.este = None
-        self.oeste = None
+        self.norte = Pared()
+        self.sur = Pared()
+        self.este = Pared()
+        self.oeste = Pared()
 
 class Laberinto(ElementoMapa):
     def __init__(self):
@@ -43,22 +45,20 @@ class Juego:
         # Lógica para iniciar el juego
         pass
 
-# Ejemplo de uso
+    def crearLaberinto2HabFM(self, creator):
+        laberinto = creator.crear_laberinto()
+        habitacion1 = creator.crear_habitacion(1)
+        habitacion2 = creator.crear_habitacion(2)
+        puerta = creator.crear_puerta(habitacion1, habitacion2)
+        habitacion1.sur = puerta
+        habitacion2.norte = puerta
+        laberinto.agregar_habitacion(habitacion1)
+        laberinto.agregar_habitacion(habitacion2)
+        return laberinto
+
+#ejemplo de uso
+creator = Creator()
 juego = Juego()
-laberinto = juego.laberinto
-
-# Crear habitaciones
-habitacion1 = Habitacion(1)
-habitacion2 = Habitacion(2)
-
-# Conectar habitaciones
-puerta = Puerta(habitacion1, habitacion2)
-habitacion1.este = puerta
-habitacion2.oeste = puerta
-
-# Agregar habitaciones al laberinto
-laberinto.agregar_habitacion(habitacion1)
-laberinto.agregar_habitacion(habitacion2)
-
-# Iniciar el juego
-juego.iniciar_juego()
+juego.laberinto = juego.crearLaberinto2HabFM(creator)
+print(juego.laberinto.habitaciones[0].num)
+print(juego.laberinto.habitaciones[1].num)
