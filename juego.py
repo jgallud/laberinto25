@@ -15,6 +15,12 @@ class Laberinto(ElementoMapa):
     def agregar_habitacion(self, habitacion):
         self.habitaciones.append(habitacion)
 
+    def obtenerHabitacion(self, num):
+        for habitacion in self.habitaciones:
+            if habitacion.num == num:
+                return habitacion
+        return None
+
 class Pared(ElementoMapa):
     def __init__(self):
         super().__init__()
@@ -49,3 +55,6 @@ class Juego:
         laberinto.agregar_habitacion(habitacion1)
         laberinto.agregar_habitacion(habitacion2)
         return laberinto
+
+    def obtenerHabitacion(self, num):
+        return self.laberinto.obtenerHabitacion(num)
