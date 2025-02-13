@@ -2,15 +2,24 @@ class ElementoMapa:
     def __init__(self):
         pass
 
+    def entrar(self):
+        pass
+
 class Habitacion(ElementoMapa):
     def __init__(self, num):
         super().__init__()
         self.num = num
 
+    def entrar(self):
+        print(f"Entrando en la habitación {self.num}")
+
 class Laberinto(ElementoMapa):
     def __init__(self):
         super().__init__()
         self.habitaciones = []
+
+    def entrar(self):
+        print("Entrando en el laberinto")
 
     def agregar_habitacion(self, habitacion):
         self.habitaciones.append(habitacion)
@@ -25,11 +34,25 @@ class Pared(ElementoMapa):
     def __init__(self):
         super().__init__()
 
+    def entrar(self):
+        print("Entrando en una pared")
+
+class ParedBomba(Pared):
+    def __init__(self):
+        super().__init__()
+        self.activa = False
+
+    def entrar(self):
+        print("Entrando en una pared bomba")
+
 class Puerta:
     def __init__(self, lado1, lado2):
         self.abierta = False
         self.lado1 = lado1
         self.lado2 = lado2
+
+    def entrar(self):
+        print("Entrando en una puerta")
 
     def abrir(self):
         self.abierta = True
