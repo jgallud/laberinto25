@@ -9,7 +9,7 @@ En este proyecto se utiliza Cline en VSCode con Geimini
 ## Factory Method
 El primer patrón implementado es el Factory Method. A continuación, se muestra el diagrama de clases.
 
-![laberinto-fm](https://github.com/user-attachments/assets/76cfb4d0-9eb1-4b9e-a36e-1a8ff2089e9a | width=100)
+![laberinto-fm](https://github.com/user-attachments/assets/76cfb4d0-9eb1-4b9e-a36e-1a8ff2089e9a)
 
 ## Decorator
 Con este patrón podemos agregar responsabilidades nuevas (Bomba) a otros objetos (Pared, Puerta...).
