@@ -15,6 +15,9 @@ class Bomba(Decorator):
         super().__init__(em)
         self.activa = False
 
+    def esBomba(self):
+        return True
+
 class Bicho:
     def __init__(self, vidas, poder, posicion, modo):
         self.vidas = vidas
@@ -117,6 +120,26 @@ class Juego:
         puerta = creator.crear_puerta(habitacion1, habitacion2)
         habitacion1.sur = puerta
         habitacion2.norte = puerta
+        laberinto.agregar_habitacion(habitacion1)
+        laberinto.agregar_habitacion(habitacion2)
+        return laberinto
+    def crearLaberinto2HabBomba(self, creator):
+        laberinto = creator.crear_laberinto()
+        habitacion1 = creator.crear_habitacion(1)
+        habitacion2 = creator.crear_habitacion(2)
+        puerta = creator.crear_puerta(habitacion1, habitacion2)
+
+        habitacion1.sur = puerta
+        habitacion2.norte = puerta
+
+        pared1 = creator.crear_pared()
+        bomba1 = creator.crear_bomba(pared1)
+        habitacion1.este = bomba1
+
+        pared2 = creator.crear_pared()
+        bomba2 = creator.crear_bomba(pared2)
+        habitacion2.oeste = bomba2
+
         laberinto.agregar_habitacion(habitacion1)
         laberinto.agregar_habitacion(habitacion2)
         return laberinto
