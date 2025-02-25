@@ -18,3 +18,7 @@ Con este patrón podemos agregar responsabilidades nuevas (Bomba) a otros objeto
 ## Strategy
 El Strategy encapsula familias de algoritmos como objetos. En nuestra solución lo aplicamos para encapsular el modo (Agresivo, Perezoso) de los bichos.
 ![strategy](https://github.com/user-attachments/assets/8357957d-3dc6-462b-b8d7-56b5069c74bc)
+
+## Composite
+Este patrón se utiliza para representar estructuras recursivas todo-parte. Simplifica a los clientes porque pueden tratar de manera uniforme a compuestos y hojas.
+![composite](https://github.com/user-attachments/assets/c901618f-64bc-410c-ba11-2d336447ea92)
