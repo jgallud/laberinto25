@@ -1,11 +1,30 @@
 class ElementoMapa:
     def __init__(self):
-        pass
+        self.padre = None
+    
+    def recorrer(self, func):
+        func(self)
 
     def entrar(self):
         pass
 
-class Decorator(ElementoMapa):
+class Contenedor(ElementoMapa):
+    def __init__(self):
+        super().__init__()
+        self.hijos = []
+
+    def agregar_hijo(self, hijo):
+        hijo.padre = self
+        self.hijos.append(hijo)
+
+    def eliminar_hijo(self, hijo):
+        self.hijos.remove(hijo)
+
+class Hoja(ElementoMapa):
+    def __init__(self):
+        super().__init__()
+
+class Decorator(Hoja):
     def __init__(self, em):
         super().__init__()
         self.em = em
@@ -46,7 +65,7 @@ class Perezoso(Modo):
     def __init__(self):
         super().__init__()
 
-class Habitacion(ElementoMapa):
+class Habitacion(Contenedor):
     def __init__(self, num):
         super().__init__()
         self.num = num
@@ -54,19 +73,18 @@ class Habitacion(ElementoMapa):
     def entrar(self):
         print(f"Entrando en la habitación {self.num}")
 
-class Laberinto(ElementoMapa):
+class Laberinto(Contenedor):
     def __init__(self):
-        super().__init__()
-        self.habitaciones = []
+        super().__init__()        
 
     def entrar(self):
         print("Entrando en el laberinto")
 
     def agregar_habitacion(self, habitacion):
-        self.habitaciones.append(habitacion)
+        self.hijos.append(habitacion)
 
     def obtenerHabitacion(self, num):
-        for habitacion in self.habitaciones:
+        for habitacion in self.hijos:
             if habitacion.num == num:
                 return habitacion
         return None
@@ -86,7 +104,7 @@ class ParedBomba(Pared):
     def entrar(self):
         print("Entrando en una pared bomba")
 
-class Puerta:
+class Puerta(ElementoMapa):
     def __init__(self, lado1, lado2):
         self.abierta = False
         self.lado1 = lado1
@@ -100,6 +118,26 @@ class Puerta:
 
     def cerrar(self):
         self.abierta = False
+
+class Orientacion:
+    def __init__(self):
+        pass
+
+class Norte(Orientacion):
+    def __init__(self):
+        super().__init__()
+
+class Sur(Orientacion):
+    def __init__(self):
+        super().__init__()
+
+class Este(Orientacion):
+    def __init__(self):
+        super().__init__()
+
+class Oeste(Orientacion):
+    def __init__(self):
+        super().__init__()
 
 class Juego:
     def __init__(self):
@@ -123,6 +161,7 @@ class Juego:
         laberinto.agregar_habitacion(habitacion1)
         laberinto.agregar_habitacion(habitacion2)
         return laberinto
+    
     def crearLaberinto2HabBomba(self, creator):
         laberinto = creator.crear_laberinto()
         habitacion1 = creator.crear_habitacion(1)
