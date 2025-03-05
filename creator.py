@@ -1,16 +1,37 @@
 from juego import Habitacion, Laberinto, Pared, Puerta, ParedBomba, Bomba, Bicho, Agresivo, Perezoso
+from orientacion import Norte, Sur, Este, Oeste
 
 class Creator:
     def crear_habitacion(self, num):
         habitacion = Habitacion(num)
-        habitacion.norte = self.crear_pared()
-        habitacion.sur = self.crear_pared()
-        habitacion.este = self.crear_pared()
-        habitacion.oeste = self.crear_pared()
+        habitacion.orientaciones.append(self.crear_norte())
+        habitacion.orientaciones.append(self.crear_sur())
+        habitacion.orientaciones.append(self.crear_este())
+        habitacion.orientaciones.append(self.crear_oeste())
+        pared_norte = self.crear_pared()
+        habitacion.ponerElementoEnOrientacion(pared_norte, Norte())
+        pared_sur = self.crear_pared()
+        habitacion.ponerElementoEnOrientacion(pared_sur, Sur())
+        pared_este = self.crear_pared()
+        habitacion.ponerElementoEnOrientacion(pared_este, Este())
+        pared_oeste = self.crear_pared()
+        habitacion.ponerElementoEnOrientacion(pared_oeste, Oeste())
         return habitacion
 
     def crear_laberinto(self):
         return Laberinto()
+
+    def crear_norte(self):
+        return Norte()
+
+    def crear_sur(self):
+        return Sur()
+
+    def crear_este(self):
+        return Este()
+
+    def crear_oeste(self):
+        return Oeste()
 
     def crear_pared(self):
         return Pared()

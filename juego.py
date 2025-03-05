@@ -26,8 +26,8 @@ class Juego:
         habitacion1 = creator.crear_habitacion(1)
         habitacion2 = creator.crear_habitacion(2)
         puerta = creator.crear_puerta(habitacion1, habitacion2)
-        habitacion1.sur = puerta
-        habitacion2.norte = puerta
+        habitacion1.ponerElementoEnOrientacion(puerta, Norte())
+        habitacion2.ponerElementoEnOrientacion(puerta, Sur())
         laberinto.agregar_habitacion(habitacion1)
         laberinto.agregar_habitacion(habitacion2)
         return laberinto
@@ -38,16 +38,16 @@ class Juego:
         habitacion2 = creator.crear_habitacion(2)
         puerta = creator.crear_puerta(habitacion1, habitacion2)
 
-        habitacion1.sur = puerta
-        habitacion2.norte = puerta
+        habitacion1.ponerElementoEnOrientacion(puerta, Norte())
+        habitacion2.ponerElementoEnOrientacion(puerta, Sur())
 
         pared1 = creator.crear_pared()
         bomba1 = creator.crear_bomba(pared1)
-        habitacion1.este = bomba1
+        habitacion1.ponerElementoEnOrientacion(bomba1, Este())
 
         pared2 = creator.crear_pared()
         bomba2 = creator.crear_bomba(pared2)
-        habitacion2.oeste = bomba2
+        habitacion2.ponerElementoEnOrientacion(bomba2, Oeste())
 
         laberinto.agregar_habitacion(habitacion1)
         laberinto.agregar_habitacion(habitacion2)
@@ -69,14 +69,14 @@ class Juego:
         puerta24 = creator.crear_puerta(habitacion2, habitacion4)
         puerta34 = creator.crear_puerta(habitacion3, habitacion4)
 
-        habitacion1.sur = puerta12
-        habitacion1.este = puerta13
-        habitacion3.oeste = puerta13
-        habitacion3.sur = puerta34
-        habitacion2.norte = puerta12
-        habitacion2.este = puerta24
-        habitacion4.norte = puerta34
-        habitacion4.oeste = puerta24
+        habitacion1.ponerElementoEnOrientacion(puerta12, Sur())
+        habitacion1.ponerElementoEnOrientacion(puerta13, Este())
+        habitacion3.ponerElementoEnOrientacion(puerta13, Oeste())
+        habitacion3.ponerElementoEnOrientacion(puerta34, Sur())
+        habitacion2.ponerElementoEnOrientacion(puerta12, Norte())
+        habitacion2.ponerElementoEnOrientacion(puerta24, Este())
+        habitacion4.ponerElementoEnOrientacion(puerta34, Norte())
+        habitacion4.ponerElementoEnOrientacion(puerta24, Oeste())
 
         bicho1 = creator.crear_bicho(5, 10, habitacion1, creator.crear_modo_agresivo())
         self.agregar_bicho(bicho1)

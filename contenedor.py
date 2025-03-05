@@ -4,6 +4,7 @@ class Contenedor(ElementoMapa):
     def __init__(self):
         super().__init__()
         self.hijos = []
+        self.orientaciones = []
 
     def agregar_hijo(self, hijo):
         hijo.padre = self
@@ -11,3 +12,12 @@ class Contenedor(ElementoMapa):
 
     def eliminar_hijo(self, hijo):
         self.hijos.remove(hijo)
+
+    def agregar_orientacion(self, orientacion):
+        self.orientaciones.append(orientacion)
+
+    def eliminar_orientacion(self, orientacion):
+        self.orientaciones.remove(orientacion)
+
+    def ponerElementoEnOrientacion(self, elemento, orientacion):
+        orientacion.poner(self, elemento)
