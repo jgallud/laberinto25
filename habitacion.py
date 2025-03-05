@@ -7,3 +7,6 @@ class Habitacion(Contenedor):
 
     def entrar(self):
         print(f"Entrando en la habitación {self.num}")
+
+    def __str__(self):
+        return "Soy una habitacion"

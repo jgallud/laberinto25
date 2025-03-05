@@ -20,4 +20,11 @@ class Contenedor(ElementoMapa):
         self.orientaciones.remove(orientacion)
 
     def ponerElementoEnOrientacion(self, elemento, orientacion):
-        orientacion.poner(self, elemento)
+        orientacion.poner(elemento, self)
+
+    def recorrer(self, func):
+        func(self)
+        for hijo in self.hijos:
+            hijo.recorrer(func)
+        for orientacion in self.orientaciones:
+            orientacion.recorrer(func, self)

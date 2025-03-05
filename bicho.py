@@ -19,3 +19,6 @@ class Bicho:
     def iniPerezoso(self):
         self.poder = 1
         self.vidas = 5
+
+    def __str__(self):
+        return "Soy un bicho"

@@ -1,5 +1,9 @@
 from juego import Habitacion, Laberinto, Pared, Puerta, ParedBomba, Bomba, Bicho, Agresivo, Perezoso
-from orientacion import Norte, Sur, Este, Oeste
+from norte import Norte
+from sur import Sur
+from este import Este
+from oeste import Oeste
+from orientacion import Orientacion
 
 class Creator:
     def crear_habitacion(self, num):

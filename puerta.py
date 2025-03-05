@@ -10,7 +10,14 @@ class Puerta(ElementoMapa):
         print("Entrando en una puerta")
 
     def abrir(self):
+        print("Abriendo puerta")
         self.abierta = True
 
     def cerrar(self):
         self.abierta = False
+
+    def esPuerta(self):
+        return True
+
+    def __str__(self):
+        return "Soy una puerta"

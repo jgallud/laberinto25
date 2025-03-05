@@ -7,3 +7,9 @@ class ElementoMapa:
 
     def entrar(self):
         pass
+
+    def esPuerta(self):
+        return False
+
+    def __str__(self):
+        return "Soy un ElementoMapa"

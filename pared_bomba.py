@@ -7,3 +7,6 @@ class ParedBomba(Pared):
 
     def entrar(self):
         print("Entrando en una pared bomba")
+
+    def __str__(self):
+        return "Soy una pared bomba"

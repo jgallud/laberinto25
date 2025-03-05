@@ -12,3 +12,6 @@ class Agresivo(Modo):
 
     def atacar(self, bicho):
         print("Agresivo: ¡Atacando con furia!")
+
+    def __str__(self):
+        return "Soy un modo agresivo"

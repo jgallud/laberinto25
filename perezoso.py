@@ -12,3 +12,6 @@ class Perezoso(Modo):
 
     def atacar(self, bicho):
         print("Perezoso: Intentando atacar...")
+
+    def __str__(self):
+        return "Soy un modo perezoso"

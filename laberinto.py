@@ -7,6 +7,9 @@ class Laberinto(Contenedor):
     def entrar(self):
         print("Entrando en el laberinto")
 
+    def __str__(self):
+        return "Soy un laberinto"
+
     def agregar_habitacion(self, habitacion):
         self.hijos.append(habitacion)
 

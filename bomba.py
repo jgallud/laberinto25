@@ -7,3 +7,6 @@ class Bomba(Decorator):
 
     def esBomba(self):
         return True
+
+    def __str__(self):
+        return "Soy una bomba"

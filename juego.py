@@ -2,7 +2,11 @@ from laberinto import Laberinto
 from bicho import Bicho
 from habitacion import Habitacion
 from puerta import Puerta
-from orientacion import Norte, Sur, Este, Oeste
+from norte import Norte
+from sur import Sur
+from este import Este
+from oeste import Oeste
+from orientacion import Orientacion
 from agresivo import Agresivo
 from perezoso import Perezoso
 from pared import Pared

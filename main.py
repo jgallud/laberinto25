@@ -26,4 +26,12 @@ for habitacion in juego.laberinto.hijos:
     print(f"Habitación {habitacion.num}")
     if hasattr(habitacion, 'bicho'):
         bicho = habitacion.bicho
-        bicho = habitacion.bicho
+
+# Ejemplo de uso de recorrer con print
+print("\nRecorriendo el laberinto e imprimiendo:")
+juego.laberinto.recorrer(print)
+
+def abrirPuertas(obj):
+    if obj.esPuerta():
+        obj.abrir()
+juego.laberinto.recorrer(abrirPuertas)

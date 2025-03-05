@@ -6,3 +6,6 @@ class Pared(ElementoMapa):
 
     def entrar(self):
         print("Entrando en una pared")
+
+    def __str__(self):
+        return "Soy una pared"

@@ -15,3 +15,6 @@ class Modo:
 
     def atacar(self, bicho):
         pass
+
+    def __str__(self):
+        return "Soy un modo"
