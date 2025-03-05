@@ -22,7 +22,7 @@ fm = Creator()
 juego.laberinto = juego.crearLaberinto4Hab(fm)
 
 # Mostrar el número de cada habitación
-for habitacion in juego.laberinto.habitaciones:
+for habitacion in juego.laberinto.hijos:
     print(f"Habitación {habitacion.num}")
     if hasattr(habitacion, 'bicho'):
         bicho = habitacion.bicho
@@ -51,7 +51,7 @@ fm = Creator()
 juego.laberinto = juego.crearLaberinto4Hab(fm)
 
 # Mostrar el número de cada habitación
-for habitacion in juego.laberinto.habitaciones:
+for habitacion in juego.laberinto.hijos:
     print(f"Habitación {habitacion.num}")
     if hasattr(habitacion, 'bicho'):
         bicho = habitacion.bicho
@@ -79,7 +79,7 @@ fm = Creator()
 juego.laberinto = juego.crearLaberinto4Hab(fm)
 
 # Mostrar el número de cada habitación
-for habitacion in juego.laberinto.habitaciones:
+for habitacion in juego.laberinto.hijos:
     print(f"Habitación {habitacion.num}")
     if hasattr(habitacion, 'bicho'):
         bicho = habitacion.bicho
@@ -107,7 +107,7 @@ fm = Creator()
 juego.laberinto = juego.crearLaberinto4Hab(fm)
 
 # Mostrar el número de cada habitación
-for habitacion in juego.laberinto.habitaciones:
+for habitacion in juego.laberinto.hijos:
     print(f"Habitación {habitacion.num}")
     if hasattr(habitacion, 'bicho'):
         bicho = habitacion.bicho
@@ -135,7 +135,7 @@ fm = Creator()
 juego.laberinto = juego.crearLaberinto4Hab(fm)
 
 # Mostrar el número de cada habitación
-for habitacion in juego.laberinto.habitaciones:
+for habitacion in juego.laberinto.hijos:
     print(f"Habitación {habitacion.num}")
     if hasattr(habitacion, 'bicho'):
         bicho = habitacion.bicho
@@ -163,7 +163,7 @@ fm = Creator()
 juego.laberinto = juego.crearLaberinto4Hab(fm)
 
 # Mostrar el número de cada habitación
-for habitacion in juego.laberinto.habitaciones:
+for habitacion in juego.laberinto.hijos:
     print(f"Habitación {habitacion.num}")
     if hasattr(habitacion, 'bicho'):
         bicho = habitacion.bicho
@@ -191,7 +191,7 @@ fm = Creator()
 juego.laberinto = juego.crearLaberinto4Hab(fm)
 
 # Mostrar el número de cada habitación
-for habitacion in juego.laberinto.habitaciones:
+for habitacion in juego.laberinto.hijos:
     print(f"Habitación {habitacion.num}")
     if hasattr(habitacion, 'bicho'):
         bicho = habitacion.bicho
