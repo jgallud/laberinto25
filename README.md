@@ -22,3 +22,6 @@ El Strategy encapsula familias de algoritmos como objetos. En nuestra solución 
 ## Composite
 Este patrón se utiliza para representar estructuras recursivas todo-parte. Simplifica a los clientes porque pueden tratar de manera uniforme a compuestos y hojas.
 ![composite](https://github.com/user-attachments/assets/c901618f-64bc-410c-ba11-2d336447ea92)
+
+## Iterator
+<img width="928" alt="iterator" src="https://github.com/user-attachments/assets/05f8d9ff-6fd2-4154-8b49-2bddb0b1b0b8" />
