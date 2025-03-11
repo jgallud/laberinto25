@@ -24,4 +24,9 @@ Este patrón se utiliza para representar estructuras recursivas todo-parte. Simp
 ![composite](https://github.com/user-attachments/assets/c901618f-64bc-410c-ba11-2d336447ea92)
 
 ## Iterator
+Utilizamos un iterador interno que es adecuado para estructuras tipo Composite. El iterador interno se implementa con la operación recorrer(unBloque). El parámetro unBloque es una función anónima.
 <img width="928" alt="iterator" src="https://github.com/user-attachments/assets/05f8d9ff-6fd2-4154-8b49-2bddb0b1b0b8" />
+
+## Singleton
+En esta solución, aplicamos el Singleton a las orientaciones
+<img width="1095" alt="singleton" src="https://github.com/user-attachments/assets/81d5f7a3-6732-401d-938d-c28cd8a4ccff" />
