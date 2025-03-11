@@ -21,6 +21,8 @@ El Strategy encapsula familias de algoritmos como objetos. En nuestra solución 
 
 ## Composite
 Este patrón se utiliza para representar estructuras recursivas todo-parte. Simplifica a los clientes porque pueden tratar de manera uniforme a compuestos y hojas.
+En el caso del proyecto del juego del laberinto, el Composite lo forman ElementoMapa (Component), Contenedor (Composite) y Hoja (Leaf).
+
 ![composite](https://github.com/user-attachments/assets/c901618f-64bc-410c-ba11-2d336447ea92)
 
 ## Iterator, Singleton y Template Method
