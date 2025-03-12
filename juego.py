@@ -12,14 +12,47 @@ from perezoso import Perezoso
 from pared import Pared
 from bomba import Bomba
 from pared_bomba import ParedBomba
+from ente import Personaje
 
 class Juego:
     def __init__(self):
         self.laberinto = Laberinto()
         self.bichos = []
+        self.personaje=None
+        self.bicho_threads = {}
 
     def agregar_bicho(self, bicho):
+        bicho.juego = self
         self.bichos.append(bicho)
+
+    def lanzarBicho(self, bicho):
+        import threading
+        thread = threading.Thread(target=bicho.actua)
+        if bicho not in self.bicho_threads:
+            self.bicho_threads[bicho] = []
+        self.bicho_threads[bicho].append(thread)
+        thread.start()
+
+    def terminarBicho(self, bicho):
+        if bicho in self.bicho_threads:
+            for thread in self.bicho_threads[bicho]:
+                bicho.vidas = 0
+
+    def agregar_personaje(self, nombre):
+        self.personaje = Personaje(10, 1, None, self, nombre)
+        self.laberinto.entrar(self.personaje)
+
+    def abrir_puertas(self):
+        def abrirPuertas(obj):
+            if obj.esPuerta():
+                obj.abrir()
+        self.laberinto.recorrer(abrirPuertas)
+
+    def cerrar_puertas(self):
+        def cerrarPuertas(obj):
+            if obj.esPuerta():
+                obj.cerrar()
+        self.laberinto.recorrer(cerrarPuertas)
 
     def iniciar_juego(self):
         # Lógica para iniciar el juego

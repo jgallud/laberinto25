@@ -6,14 +6,22 @@ class Puerta(ElementoMapa):
         self.lado1 = lado1
         self.lado2 = lado2
 
-    def entrar(self):
+    def entrar(self,alguien):
         print("Entrando en una puerta")
+        if self.abierta:
+            if alguien.posicion == self.lado1:
+                self.lado2.entrar(alguien)
+            else:
+                self.lado1.entrar(alguien)
+        else:
+            print("La puerta está cerrada")
 
     def abrir(self):
         print("Abriendo puerta")
         self.abierta = True
 
     def cerrar(self):
+        print("Cerrando puerta")
         self.abierta = False
 
     def esPuerta(self):

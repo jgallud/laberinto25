@@ -5,8 +5,9 @@ class Habitacion(Contenedor):
         super().__init__()
         self.num = num
 
-    def entrar(self):
+    def entrar(self, alguien):
         print(f"Entrando en la habitación {self.num}")
+        alguien.posicion=self
 
     def __str__(self):
         return "Soy una habitacion"
