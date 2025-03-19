@@ -28,4 +28,4 @@ class Bicho(Ente):
         return self.vidas > 0
 
     def __str__(self):
-        return "Soy un bicho"
+        return "Soy un bicho"+self.modo.__str__()

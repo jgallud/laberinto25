@@ -29,8 +29,8 @@ for habitacion in juego.laberinto.hijos:
 
 #mostrar los bichos del juego
 for bicho in juego.bichos:
+    print(bicho)
     print(f"Bicho con {bicho.vidas} vidas y {bicho.poder} de poder")
-    print(f"Modo {bicho.modo}")
     print(f"Posición {bicho.posicion.num}")
 
 

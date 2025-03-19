@@ -16,4 +16,4 @@ class Perezoso(Modo):
         print("Perezoso: Intentando atacar...")
 
     def __str__(self):
-        return "Soy un modo perezoso"
+        return "-perezoso"
