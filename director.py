@@ -18,11 +18,24 @@ class Director:
         self._builder=LaberintoBuilder()
 
     def fabricarLaberinto(self):
-        """
-        Constructs the labyrinth step by step.
-        """
-        self._builder.construir_laberinto()
-        # Add more steps here as needed, e.g., adding rooms and doors
+        self._builder.fabricarLaberinto()
+        for each in self.dict['laberinto']:
+            self.fabricarLaberintoRecursivo(each,'root')
+        
+        for each in self.dict['puertas']:
+            self._builder.fabricarPuerta(each[0],each[1],each[2],each[3]) 
+	
+    #    "recorrer la colección de puertas, para poner las puertas"
+	#(self dict at:'puertas') do:[:each | 
+	#	self builder fabricarPuertaL1:(each at:1) or1:(each at:2) L2:(each at:3) or2:(each at:4)].
+    
+    def fabricarLaberintoRecursivo(self,each,padre):
+        if each['tipo']=='habitacion':
+            con=self._builder.construir_habitacion(each['numero'])
+        
+        if each['hijos']!=None:
+            for cadaUno in each['hijos']:
+                self.fabricarLaberintoRecursivo(cadaUno,con)
 
     def obtener_laberinto(self):
         """
