@@ -12,7 +12,7 @@ class Laberinto(Contenedor):
     def __str__(self):
         return "Soy un laberinto"
 
-    def agregar_habitacion(self, habitacion):
+    def agregarHabitacion(self, habitacion):
         self.hijos.append(habitacion)
 
     def obtenerHabitacion(self, num):

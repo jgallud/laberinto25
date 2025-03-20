@@ -13,10 +13,10 @@ class Contenedor(ElementoMapa):
     def eliminar_hijo(self, hijo):
         self.hijos.remove(hijo)
 
-    def agregar_orientacion(self, orientacion):
+    def agregarOrientacion(self, orientacion):
         self.orientaciones.append(orientacion)
 
-    def eliminar_orientacion(self, orientacion):
+    def eliminarOrientacion(self, orientacion):
         self.orientaciones.remove(orientacion)
 
     def ponerElementoEnOrientacion(self, elemento, orientacion):

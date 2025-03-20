@@ -5,6 +5,8 @@ from norte import Norte
 from sur import Sur
 from este import Este
 from oeste import Oeste 
+from habitacion import Habitacion
+from pared import Pared 
 
 class LaberintoBuilder:
     """
@@ -18,11 +20,19 @@ class LaberintoBuilder:
     def fabricarLaberinto(self):
         self.laberinto = Laberinto()
 
-    def construir_habitacion(self, numero_habitacion):
-        """
-        Builds a room in the labyrinth.
-        """
-        pass
+    def fabricarHabitacion(self, num):
+        hab=Habitacion(num)	
+        hab.agregarOrientacion(self.fabricarNorte())
+        hab.agregarOrientacion(self.fabricarSur())
+        hab.agregarOrientacion(self.fabricarEste())
+        hab.agregarOrientacion(self.fabricarOeste())
+        for each in hab.orientaciones:
+            hab.ponerElementoEnOrientacion(self.fabricarPared(),each)
+        self.laberinto.agregarHabitacion(hab)
+        return hab
+
+    def fabricarPared(self):
+        return Pared()
 
     def fabricarPuerta(self, lado1,o1,lado2,o2):
         hab1=self.laberinto.obtenerHabitacion(lado1)
@@ -54,8 +64,7 @@ class LaberintoBuilder:
         return Este()
     def fabricarOeste(self):
         return Oeste()
-    def obtener_laberinto(self):
-        """
-        Returns the constructed labyrinth.
-        """
-        return self._laberinto
+    def obtenerJuego(self):
+        juego=Juego()
+        juego.laberinto=self.laberinto
+        return self.juego
