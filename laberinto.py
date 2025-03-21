@@ -20,3 +20,9 @@ class Laberinto(Contenedor):
             if habitacion.num == num:
                 return habitacion
         return None
+    
+    def recorrer(self, func):
+        func(self)
+        for hijo in self.hijos:
+            hijo.recorrer(func)
+

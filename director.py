@@ -7,15 +7,18 @@ class Director:
         self.builder = None
         self.dict=None
 
+    def obtenerJuego(self):
+        return self.builder.obtenerJuego()
+    
     def procesar(self,unArchivo):
         self.leerArchivo(unArchivo)
         self.iniBuilder()
         self.fabricarLaberinto()
         self.fabricarJuego()
-        #self.fabricarBichos()
+        self.fabricarBichos()
 
     def fabricarJuego(self):
-        self.builder.obtenerJuego()
+        self.builder.fabricarJuego()
 
     def iniBuilder(self):
         self.builder=LaberintoBuilder()
@@ -28,10 +31,10 @@ class Director:
         for each in self.dict['puertas']:
             self.builder.fabricarPuerta(each[0],each[1],each[2],each[3]) 
 	
-    #    "recorrer la colección de puertas, para poner las puertas"
-	#(self dict at:'puertas') do:[:each | 
-	#	self builder fabricarPuertaL1:(each at:1) or1:(each at:2) L2:(each at:3) or2:(each at:4)].
-    
+        #recorrer la colección de puertas para fabricarlas
+        for each in self.dict['puertas']:
+            self.builder.fabricarPuerta(each[0],each[1],each[2],each[3])    
+	
     def fabricarLaberintoRecursivo(self,each,padre):
         print(each)
         if each['tipo']=='habitacion':
@@ -53,3 +56,7 @@ class Director:
         except json.JSONDecodeError:
             print(f"Error: Invalid JSON format in file: {filename}")
             return None
+
+    def fabricarBichos(self):
+        for each in self.dict['bichos']:
+            self.builder.fabricarBicho(each['modo'],each['posicion'])

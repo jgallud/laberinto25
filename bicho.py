@@ -3,13 +3,12 @@ from agresivo import Agresivo
 from ente import Ente
 
 class Bicho(Ente):
-    def __init__(self, vidas, poder, posicion, modo):
-        #super().__init__(vidas, poder, posicion)
-        self.modo = modo
+    def __init__(self):
+        self.modo = None
         self.running = True
-        self.poder = poder
-        self.vidas = vidas
-        self.posicion = posicion
+        self.poder = None
+        self.vidas = None
+        self.posicion = None
 
     def actua(self):
         while self.estaVivo():

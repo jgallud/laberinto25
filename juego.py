@@ -38,6 +38,14 @@ class Juego:
             for thread in self.bicho_threads[bicho]:
                 bicho.vidas = 0
 
+    def lanzarBichos(self):
+        for bicho in self.bichos:
+            self.lanzarBicho(bicho)
+
+    def terminarBichos(self):
+        for bicho in self.bichos:
+            self.terminarBicho(bicho)
+
     def agregar_personaje(self, nombre):
         self.personaje = Personaje(10, 1, None, self, nombre)
         self.laberinto.entrar(self.personaje)

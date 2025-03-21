@@ -46,8 +46,8 @@ class Creator:
     def crear_bomba(self, em):
         return Bomba(em)
 
-    def crear_bicho(self, vidas, poder, posicion, modo):
-        return Bicho(vidas, poder, posicion, modo)
+    def crear_bicho(self):
+        return Bicho()
 
     def crear_modo_agresivo(self):
         return Agresivo()
