@@ -37,6 +37,6 @@ El método actua de Modo es un Template Method. Las operaciones primitivas son: 
 
 <img width="1095" alt="singleton" src="https://github.com/user-attachments/assets/81d5f7a3-6732-401d-938d-c28cd8a4ccff" />
 
-### Builder
+## Builder
 Aplicamos el patrón Builder para crear laberintos a partir de un archivo JSON. El participante Director lee el archivo e interpreta el archivo JSON para ir creando cada una de las partes del juego.
 ![builder](https://github.com/user-attachments/assets/d2d58af6-5c62-4e40-b39c-0fccc41bb9a9)
