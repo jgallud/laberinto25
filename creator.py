@@ -4,14 +4,11 @@ from sur import Sur
 from este import Este
 from oeste import Oeste
 from orientacion import Orientacion
-
+from cuadrado import Cuadrado
 class Creator:
     def crear_habitacion(self, num):
         habitacion = Habitacion(num)
-        habitacion.orientaciones.append(self.crear_norte())
-        habitacion.orientaciones.append(self.crear_sur())
-        habitacion.orientaciones.append(self.crear_este())
-        habitacion.orientaciones.append(self.crear_oeste())
+        habitacion.forma = self.crear_forma()
         pared_norte = self.crear_pared()
         habitacion.ponerElementoEnOrientacion(pared_norte, Norte())
         pared_sur = self.crear_pared()
@@ -22,19 +19,27 @@ class Creator:
         habitacion.ponerElementoEnOrientacion(pared_oeste, Oeste())
         return habitacion
 
+    def crear_forma(self):
+        forma=Cuadrado()
+        forma.agregarOrientacion(self.fabricarNorte())
+        forma.agregarOrientacion(self.fabricarSur())
+        forma.agregarOrientacion(self.fabricarEste())
+        forma.agregarOrientacion(self.fabricarOeste())
+        return forma
+    
     def crear_laberinto(self):
         return Laberinto()
 
-    def crear_norte(self):
+    def fabricarNorte(self):
         return Norte()
 
-    def crear_sur(self):
+    def fabricarSur(self):
         return Sur()
 
-    def crear_este(self):
+    def fabricarEste(self):
         return Este()
 
-    def crear_oeste(self):
+    def fabricarOeste(self):
         return Oeste()
 
     def crear_pared(self):
@@ -46,8 +51,13 @@ class Creator:
     def crear_bomba(self, em):
         return Bomba(em)
 
-    def crear_bicho(self):
-        return Bicho()
+    def crear_bicho(self,vidas,poder,posicion,modo):
+        bicho=Bicho();
+        bicho.vidas=vidas
+        bicho.poder=poder
+        bicho.posicion=posicion
+        bicho.modo=modo
+        return bicho
 
     def crear_modo_agresivo(self):
         return Agresivo()

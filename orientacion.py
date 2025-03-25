@@ -7,3 +7,6 @@ class Orientacion:
 
     def __str__(self):
         return "Soy una orientacion"
+
+    def obtenerElemento(self, forma):
+        raise NotImplementedError

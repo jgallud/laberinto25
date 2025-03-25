@@ -1,4 +1,5 @@
 {
+	"forma":"cuadrado",
 	"laberinto":[
 		{"tipo":"habitacion","num":1,"hijos":[]},
 		{"tipo":"habitacion","num":2,"hijos":[]}],

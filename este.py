@@ -17,3 +17,6 @@ class Este(Orientacion):
 
     def __str__(self):
         return "Soy la orientacion este"
+
+    def obtenerElemento(self, forma):
+        return forma.este

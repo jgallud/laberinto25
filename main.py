@@ -1,5 +1,7 @@
 from creator import Creator, CreatorB
 from juego import Juego
+from este import Este
+from oeste import Oeste
 import time
 
 #ejemplo de uso
@@ -16,8 +18,10 @@ fmb = CreatorB()
 juego.laberinto = juego.crearLaberinto2HabBomba(fmb)
 hab1=juego.obtenerHabitacion(1)
 hab2=juego.obtenerHabitacion(2)
-print(hab1.este.activa)
-print(hab2.oeste.activa)
+bm1=hab1.obtenerElementoEnOrientacion(Este())
+bm2=hab2.obtenerElementoEnOrientacion(Oeste())
+print(bm1.activa)
+print(bm2.activa)
 
 # Crear laberinto de 4 habitaciones
 fm = Creator()

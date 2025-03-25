@@ -10,6 +10,7 @@ from pared import Pared
 from bicho import Bicho
 from agresivo import Agresivo
 from perezoso import Perezoso
+from cuadrado import Cuadrado
 
 class LaberintoBuilder:
     def __init__(self):
@@ -25,6 +26,7 @@ class LaberintoBuilder:
 
     def fabricarHabitacion(self, num):
         hab=Habitacion(num)	
+        hab.forma=self.fabricarForma()
         hab.agregarOrientacion(self.fabricarNorte())
         hab.agregarOrientacion(self.fabricarSur())
         hab.agregarOrientacion(self.fabricarEste())
@@ -59,6 +61,14 @@ class LaberintoBuilder:
                 obj=self.fabricarOeste()
         return obj
      
+    def fabricarForma(self):
+        forma=Cuadrado()
+        forma.agregarOrientacion(self.fabricarNorte())
+        forma.agregarOrientacion(self.fabricarSur())
+        forma.agregarOrientacion(self.fabricarEste())
+        forma.agregarOrientacion(self.fabricarOeste())
+        return forma
+
     def fabricarNorte(self):
         return Norte()
     def fabricarSur(self):

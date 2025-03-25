@@ -73,8 +73,8 @@ class Juego:
         puerta = creator.crear_puerta(habitacion1, habitacion2)
         habitacion1.ponerElementoEnOrientacion(puerta, Norte())
         habitacion2.ponerElementoEnOrientacion(puerta, Sur())
-        laberinto.agregar_habitacion(habitacion1)
-        laberinto.agregar_habitacion(habitacion2)
+        laberinto.agregarHabitacion(habitacion1)
+        laberinto.agregarHabitacion(habitacion2)
         return laberinto
     
     def crearLaberinto2HabBomba(self, creator):
@@ -94,8 +94,8 @@ class Juego:
         bomba2 = creator.crear_bomba(pared2)
         habitacion2.ponerElementoEnOrientacion(bomba2, Oeste())
 
-        laberinto.agregar_habitacion(habitacion1)
-        laberinto.agregar_habitacion(habitacion2)
+        laberinto.agregarHabitacion(habitacion1)
+        laberinto.agregarHabitacion(habitacion2)
         return laberinto
 
     def obtenerHabitacion(self, num):
@@ -137,9 +137,9 @@ class Juego:
         habitacion3.bicho = bicho3
         habitacion4.bicho = bicho4
 
-        laberinto.agregar_habitacion(habitacion1)
-        laberinto.agregar_habitacion(habitacion2)
-        laberinto.agregar_habitacion(habitacion3)
-        laberinto.agregar_habitacion(habitacion4)
+        laberinto.agregarHabitacion(habitacion1)
+        laberinto.agregarHabitacion(habitacion2)
+        laberinto.agregarHabitacion(habitacion3)
+        laberinto.agregarHabitacion(habitacion4)
 
         return laberinto

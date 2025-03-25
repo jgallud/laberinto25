@@ -21,7 +21,8 @@ class Director:
         self.builder.fabricarJuego()
 
     def iniBuilder(self):
-        self.builder=LaberintoBuilder()
+        if self.dict['forma']=='cuadrado':
+            self.builder=LaberintoBuilder()
 
     def fabricarLaberinto(self):
         self.builder.fabricarLaberinto()

@@ -17,3 +17,6 @@ class Sur(Orientacion):
 
     def __str__(self):
         return "Soy la orientacion sur"
+
+    def obtenerElemento(self, forma):
+        return forma.sur
