@@ -40,8 +40,9 @@ class Director:
         print(each)
         if each['tipo']=='habitacion':
             con=self.builder.fabricarHabitacion(each['num'])
-        
-        if each['hijos']!=None:
+        if each['tipo']=='tunel':
+            self.builder.fabricarTunelEn(padre)
+        if 'hijos'in each.keys():
             for cadaUno in each['hijos']:
                 self.fabricarLaberintoRecursivo(cadaUno,con)
 

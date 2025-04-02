@@ -1,3 +1,4 @@
+import copy
 from laberinto import Laberinto
 from bicho import Bicho
 from habitacion import Habitacion
@@ -16,10 +17,14 @@ from ente import Personaje
 
 class Juego:
     def __init__(self):
-        self.laberinto = Laberinto()
+        self.habitaciones = {}
         self.bichos = []
+        self.prototipo = None
         self.personaje=None
         self.bicho_threads = {}
+
+    def clonarLaberinto(self):
+        return copy.deepcopy(self.prototipo)
 
     def agregar_bicho(self, bicho):
         bicho.juego = self

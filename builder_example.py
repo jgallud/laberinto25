@@ -7,7 +7,7 @@ import time
 
 director = Director()
 
-filename = "./laberintos/lab4Hab.json"
+filename = "./laberintos/lab2HabTunel.json"
 
 data = director.leerArchivo(filename)
 if data:
