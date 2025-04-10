@@ -40,3 +40,7 @@ El método actua de Modo es un Template Method. Las operaciones primitivas son: 
 ## Builder
 Aplicamos el patrón Builder para crear laberintos a partir de un archivo JSON. El participante Director lee el archivo e interpreta el archivo JSON para ir creando cada una de las partes del juego.
 ![builder](https://github.com/user-attachments/assets/d2d58af6-5c62-4e40-b39c-0fccc41bb9a9)
+
+## State
+El patrón State permite alterar su comportamiento cuando cambia de estado. Encapsula los estados de un objeto como objetos. Aplicamos el patrón State a los estados de Puerta (abierta o cerrada) y también a los estados de Ente (Vivo o Muerto).
+![state](https://github.com/user-attachments/assets/d7c80503-4b14-470a-88ed-07a3c6ddfcff)
