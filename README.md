@@ -44,3 +44,7 @@ Aplicamos el patrón Builder para crear laberintos a partir de un archivo JSON. 
 ## State
 El patrón State permite alterar su comportamiento cuando cambia de estado. Encapsula los estados de un objeto como objetos. Aplicamos el patrón State a los estados de Puerta (abierta o cerrada) y también a los estados de Ente (Vivo o Muerto).
 ![state](https://github.com/user-attachments/assets/d7c80503-4b14-470a-88ed-07a3c6ddfcff)
+
+## Command
+El patrón Command encapsula una petición como un objeto. Aplicamos el patrón Command a las peticiones abrir, entrar y cerrar de Puerta y activar de Bomba.
+![command](https://github.com/user-attachments/assets/37fbce91-e1e5-40cb-8145-f9772b4bd056)
