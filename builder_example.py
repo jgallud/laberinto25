@@ -18,6 +18,7 @@ else:
 
 juego = director.procesar(filename)
 juego = director.obtenerJuego()
+juego.agregar_personaje("Pepe")
 
 # Ejemplo de uso de recorrer con print
 print("\nRecorriendo el laberinto e imprimiendo:")
@@ -31,5 +32,5 @@ for bicho in juego.bichos:
 
 juego.abrir_puertas()
 juego.lanzarBichos()
-time.sleep(3)
+time.sleep(15)
 juego.terminarBichos()

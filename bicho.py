@@ -23,6 +23,11 @@ class Bicho(Ente):
         self.poder = 1
         self.vidas = 5
 
+    def atacar(self):
+        self.juego.buscarPersonaje(self)
+    def caminar(self):
+        self.posicion.caminarAleatorio(self)
+
     def estaVivo(self):
         return self.vidas > 0
 

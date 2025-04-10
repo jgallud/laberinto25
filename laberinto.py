@@ -26,3 +26,8 @@ class Laberinto(Contenedor):
         for hijo in self.hijos:
             hijo.recorrer(func)
 
+    def entrar(self, alguien):        
+        hab1=self.obtenerHabitacion(1)
+        hab1.entrar(alguien)
+        print(f"{alguien} entra en el laberinto")
+        

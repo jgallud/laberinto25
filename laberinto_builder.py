@@ -31,11 +31,11 @@ class LaberintoBuilder:
     def fabricarHabitacion(self, num):
         hab=Habitacion(num)	
         hab.forma=self.fabricarForma()
-        hab.agregarOrientacion(self.fabricarNorte())
-        hab.agregarOrientacion(self.fabricarSur())
-        hab.agregarOrientacion(self.fabricarEste())
-        hab.agregarOrientacion(self.fabricarOeste())
-        for each in hab.orientaciones:
+        # hab.agregarOrientacion(self.fabricarNorte())
+        # hab.agregarOrientacion(self.fabricarSur())
+        # hab.agregarOrientacion(self.fabricarEste())
+        # hab.agregarOrientacion(self.fabricarOeste())
+        for each in hab.forma.orientaciones:
             hab.ponerElementoEnOrientacion(self.fabricarPared(),each)
         self.laberinto.agregarHabitacion(hab)
         return hab

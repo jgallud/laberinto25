@@ -11,10 +11,10 @@ class Modo:
         pass
 
     def caminar(self, bicho):
-        pass
+        bicho.caminar()
 
     def atacar(self, bicho):
-        pass
+        bicho.atacar()
 
     def __str__(self):
         return "Soy un modo"

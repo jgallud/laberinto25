@@ -20,3 +20,6 @@ class Sur(Orientacion):
 
     def obtenerElemento(self, forma):
         return forma.sur
+
+    def caminarAleatorio(self, bicho, forma):
+        forma.sur.entrar(bicho)

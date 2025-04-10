@@ -6,5 +6,5 @@
 		]},
 		{"tipo":"habitacion","num":2,"hijos":[]}],
 	"puertas":[[1,"Sur",2,"Norte"]],
-	"bichos":[{"modo":"Agresivo","posicion":1}]
+	"bichos":[{"modo":"Agresivo","posicion":2}]
 }

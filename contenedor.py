@@ -4,7 +4,6 @@ class Contenedor(ElementoMapa):
     def __init__(self):
         super().__init__()
         self.hijos = []
-        self.orientaciones = []
         self.forma = None
 
     def agregar_hijo(self, hijo):
@@ -27,8 +26,10 @@ class Contenedor(ElementoMapa):
         func(self)
         for hijo in self.hijos:
             hijo.recorrer(func)
-        for orientacion in self.orientaciones:
-            orientacion.recorrer(func, self)
+        self.forma.recorrer(func)
 
     def obtenerElementoEnOrientacion(self, orientacion):
         return self.forma.obtenerElementoEnOrientacion(orientacion)
+    
+    def caminarAleatorio(self, bicho):
+        self.forma.caminarAleatorio(bicho)

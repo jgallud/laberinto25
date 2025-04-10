@@ -52,18 +52,26 @@ class Juego:
             self.terminarBicho(bicho)
 
     def agregar_personaje(self, nombre):
-        self.personaje = Personaje(10, 1, None, self, nombre)
+        self.personaje = Personaje(10, 1, self, nombre)
         self.laberinto.entrar(self.personaje)
 
+    def buscarPersonaje(self,bicho):
+        if bicho.posicion == self.personaje.posicion:
+            print(f"El bicho {bicho} ataca al personaje {self.personaje}")
+            self.personaje.esAtacadoPor(bicho)
+    def buscarBicho(self):
+        pass
     def abrir_puertas(self):
         def abrirPuertas(obj):
             if obj.esPuerta():
+                print(f"Abriendo puerta", obj)
                 obj.abrir()
         self.laberinto.recorrer(abrirPuertas)
 
     def cerrar_puertas(self):
         def cerrarPuertas(obj):
             if obj.esPuerta():
+                print(f"Cerrando puerta", obj)
                 obj.cerrar()
         self.laberinto.recorrer(cerrarPuertas)
 
@@ -148,3 +156,6 @@ class Juego:
         laberinto.agregarHabitacion(habitacion4)
 
         return laberinto
+
+    def terminarJuego(self):
+        self.terminarBichos()
