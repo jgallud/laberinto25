@@ -11,5 +11,14 @@ class ElementoMapa:
     def esPuerta(self):
         return False
 
+    def aceptar(self, unVisitor):
+        pass
+
+    def calcularPosicionDesde(self,forma):
+        pass
+    def calcularPosicion(self):
+        pass
+    def calcularPosicionDesdeEn(self,forma, punto):
+        pass
     def __str__(self):
         return "Soy un ElementoMapa"

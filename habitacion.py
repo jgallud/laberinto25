@@ -9,5 +9,9 @@ class Habitacion(Contenedor):
         print(f"Entrando en la habitación {self.num}")
         alguien.posicion=self
 
+    def visitarContenedor(self, unVisitor):
+        unVisitor.visitarHabitacion(self)
+    def calcularPosicion(self):
+        self.forma.calcularPosicion()
     def __str__(self):
         return "Soy una habitacion"

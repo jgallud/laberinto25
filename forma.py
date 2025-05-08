@@ -2,6 +2,9 @@ import random
 class Forma:
     def __init__(self):
         self.orientaciones = []
+        self.num=None
+        self.punto=None
+        self.extent=None
 
     def agregarOrientacion(self, orientacion):
         self.orientaciones.append(orientacion)
@@ -18,7 +21,9 @@ class Forma:
     def recorrer(self, func):
         for orientacion in self.orientaciones:
             orientacion.recorrer(func, self)
-    
+    def calcularPosicion(self):
+        for orientacion in self.orientaciones:
+            orientacion.calcularPosicionDesde(self)
     def caminarAleatorio(self, bicho):
         orientacion=self.obtenerOrientacionAleatoria()
         print(f"Orientacion aleatoria: {orientacion}")
@@ -26,3 +31,7 @@ class Forma:
 
     def obtenerOrientacionAleatoria(self):
         return random.choice(self.orientaciones)
+
+    def aceptar(self, unVisitor):
+        for orientacion in self.orientaciones:
+            orientacion.aceptar(unVisitor, self)

@@ -30,4 +30,9 @@ class Laberinto(Contenedor):
         hab1=self.obtenerHabitacion(1)
         hab1.entrar(alguien)
         print(f"{alguien} entra en el laberinto")
-        
+    
+    def aceptar(self, unVisitor):
+        #unVisitor.visitarContenedor(self)
+        for hijo in self.hijos:
+            hijo.aceptar(unVisitor)
+        #self.forma.aceptar(unVisitor)

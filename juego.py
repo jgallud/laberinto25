@@ -59,6 +59,7 @@ class Juego:
         if bicho.posicion == self.personaje.posicion:
             print(f"El bicho {bicho} ataca al personaje {self.personaje}")
             self.personaje.esAtacadoPor(bicho)
+    
     def buscarBicho(self):
         pass
     def abrir_puertas(self):

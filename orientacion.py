@@ -15,3 +15,7 @@ class Orientacion:
         raise NotImplementedError
     def caminarAleatorio(self, bicho, forma):
         raise NotImplementedError
+    def aceptar(self, unVisitor, forma):
+        raise NotImplementedError
+    def calcularPosicionDesde(self, forma):
+        raise NotImplementedError

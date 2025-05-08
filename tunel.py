@@ -9,6 +9,9 @@ class Tunel(Hoja):
         self.laberinto = alguien.juego.clonarLaberinto()
         self.laberinto.entrar(self)
 
+    def aceptar(self, unVisitor):
+        unVisitor.visitarTunel(self)
+
     def entrar(self, alguien):
         if self.laberinto is None:
             alguien.clonarLaberinto(self)            

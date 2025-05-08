@@ -1,4 +1,5 @@
 from orientacion import Orientacion
+from point import Point
 
 class Este(Orientacion):
     _instance = None
@@ -23,3 +24,9 @@ class Este(Orientacion):
 
     def caminarAleatorio(self, bicho, forma):
         forma.este.entrar(bicho)
+
+    def aceptar(self, unVisitor, forma):
+        forma.este.aceptar(unVisitor)
+    def calcularPosicionDesde(self, forma):
+        unPunto=Point(forma.punto.x+1,forma.punto.y)
+        forma.este.calcularPosicionDesdeEn(forma,unPunto)

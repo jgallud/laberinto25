@@ -31,6 +31,7 @@ class LaberintoBuilder:
     def fabricarHabitacion(self, num):
         hab=Habitacion(num)	
         hab.forma=self.fabricarForma()
+        hab.forma.num=num
         # hab.agregarOrientacion(self.fabricarNorte())
         # hab.agregarOrientacion(self.fabricarSur())
         # hab.agregarOrientacion(self.fabricarEste())
