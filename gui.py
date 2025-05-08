@@ -22,12 +22,13 @@ class MazeGUI:
 
     def init_ui(self):
         self.master.title("Maze Game")
-        self.canvas = tk.Canvas(self.master, width=1050, height=600, bg="white")
+        self.canvas = tk.Canvas(self.master, width=1150, height=900, bg="white")
         self.canvas.pack()
 
         self.calcularLaberinto()
         for habitacion in self.juego.laberinto.hijos:
             print("num-punto",habitacion.num,habitacion.forma.punto.x,habitacion.forma.punto.y)
+        self.dibujarLaberinto()
        #self.draw_maze()
         #self.draw_person()
         #self.draw_bichos()
@@ -37,13 +38,25 @@ class MazeGUI:
         self.normalizar()
         self.calcularTamContenedor()
         self.asignarPuntosReales()
+    
+    def dibujarLaberinto(self):
+        self.juego.laberinto.aceptar(self)
 
-    def draw_maze(self):
-        for habitacion in self.laberinto.hijos:
-            x = habitacion.forma.point[0] * 50  # Example: calculate x based on room position
-            y = habitacion.forma.point[1] * 50  # Example: calculate y based on room position
-            self.canvas.create_rectangle(x, y, x + 40, y + 40, fill="lightgray")
+    def visitarHabitacion(self, hab):
+        self.dibujarRectangulo(hab.forma)
 
+    def visitarPared(self, pared):
+        pass
+    def visitarPuerta(self, puerta):
+        pass
+    def visitarBomba(self, bomba):
+        pass
+    def visitarTunel(self, tunel):
+        pass
+
+    def dibujarRectangulo(self,forma):
+        self.canvas.create_rectangle(forma.punto.x, forma.punto.y, forma.punto.x+forma.extent.x, forma.punto.y+forma.extent.y, fill="lightgray")
+    
     def draw_person(self):
         # Implementation to draw the person on the canvas
         pass
@@ -95,7 +108,7 @@ class MazeGUI:
             y = origen_y + (each.forma.punto.y * self.alto)
             
             each.forma.punto = Point(x, y)  # Asumo que Punto(x, y) es una clase
-            each.forma.extent = (self.ancho, self.alto)
+            each.forma.extent = Point(self.ancho, self.alto)
 
             # Si quisieras incluir la recursión comentada:
             # for hijo in each.hijos:

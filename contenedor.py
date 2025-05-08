@@ -35,7 +35,7 @@ class Contenedor(ElementoMapa):
         self.forma.caminarAleatorio(bicho)
 
     def aceptar(self, unVisitor):
-        unVisitor.visitarContenedor(self)
+        self.visitarContenedor(unVisitor)
         for hijo in self.hijos:
             hijo.aceptar(unVisitor)
         self.forma.aceptar(unVisitor)

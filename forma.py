@@ -1,10 +1,11 @@
 import random
+from point import Point
 class Forma:
     def __init__(self):
         self.orientaciones = []
         self.num=None
         self.punto=None
-        self.extent=None
+        self.extent=Point(0,0)
 
     def agregarOrientacion(self, orientacion):
         self.orientaciones.append(orientacion)
