@@ -48,3 +48,6 @@ El patrón State permite alterar su comportamiento cuando cambia de estado. Enca
 ## Command
 El patrón Command encapsula una petición como un objeto. Aplicamos el patrón Command a las peticiones abrir, entrar y cerrar de Puerta y activar de Bomba.
 ![command](https://github.com/user-attachments/assets/37fbce91-e1e5-40cb-8145-f9772b4bd056)
+
+## Visitor
+![visitor](https://github.com/user-attachments/assets/cd83056a-e3dc-4a23-89d1-e35ab2429c13)
